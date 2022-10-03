@@ -127,8 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Console-interaction.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Individual.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Console-interaction.h" />
+    <ClInclude Include="Individual.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
