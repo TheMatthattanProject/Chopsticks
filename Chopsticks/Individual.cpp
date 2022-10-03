@@ -1,24 +1,28 @@
-#define AMOUNT_OF_HANDS 2
-#define FINGERS_PER_HAND 4
+#include "Individual.h"
+
+
 
 using namespace std;
 
-class Individual
+
+int Individual::getNumberOfHands() 
 {
-	public:
-		int hands[AMOUNT_OF_HANDS];
-		Individual();
-		bool aliveNextRound(Individual &opponent);
-		bool receiveChopsticks(int chopstickAmount, int handNumber);
+	return sizeof(this->hands) / sizeof(this->hands[0]);
+}
 
-	private:
-		int fingersPerHand = FINGERS_PER_HAND;
-};
 
+int Individual::getFingersOnHand(int handNumber) 
+{
+	if (handNumber < 0 || handNumber > this->fingersPerHand - 1)
+	{
+		return -1;
+	}
+	return this->hands[handNumber];
+}
 
 Individual::Individual() 
 {
-	int length = sizeof(this->hands) / sizeof(this->hands[0]);
+	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
 	for (int i = 0; i < length; i++) 
 	{
 		this->hands[i] = 1;
@@ -26,10 +30,13 @@ Individual::Individual()
 }
 
 
+
+
+
 bool Individual::aliveNextRound(Individual& opponent) 
 {
 	// Check that exactly one hand is left 
-	int length = sizeof(this->hands) / sizeof(this->hands[0]);
+	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
 	int handsLeft = 0;
 	int lastHandPos = 0;
 
@@ -75,7 +82,7 @@ bool Individual::aliveNextRound(Individual& opponent)
 
 bool Individual::receiveChopsticks(int chopstickAmount, int handNumber) 
 {
-	int length = sizeof(this->hands) / sizeof(this->hands[0]);
+	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
 	
 	// Prevent segfaults
 	// Convert to lazy evaluation a
