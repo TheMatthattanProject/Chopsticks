@@ -1,4 +1,5 @@
 #include "Individual.h"
+#include <iostream>
 
 
 
@@ -18,6 +19,19 @@ int Individual::getFingersOnHand(int handNumber)
 		return -1;
 	}
 	return this->hands[handNumber];
+}
+
+bool Individual::isDead()
+{
+	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
+		for (int i = 0; i < length; i++)
+		{
+			if (this->hands[i] > 0) 
+			{
+				return false;
+			}
+		}
+	return true;
 }
 
 Individual::Individual() 
@@ -99,7 +113,8 @@ bool Individual::receiveChopsticks(int chopstickAmount, int handNumber)
 
 	// Return true if the hand dies
 	int val = this->hands[handNumber] += chopstickAmount;
-	if (val + 1 > this->fingersPerHand) 
+	//cout << "This is val of hand and hand value\n" << "val: " << val << "\nthis->hands[" << handNumber << "]: " << this->hands[handNumber] << "\n Chopstick Amount: " << chopstickAmount <<endl;
+	if (val > this->fingersPerHand) 
 	{
 		this->hands[handNumber] = 0;
 		return true;

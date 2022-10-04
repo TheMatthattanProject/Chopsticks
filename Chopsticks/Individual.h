@@ -13,6 +13,7 @@ public:
 	bool receiveChopsticks(int chopstickAmount, int handNumber);
 	int getNumberOfHands();
 	int getFingersOnHand(int handNumber);
+	bool isDead();
 
 private:
 	int fingersPerHand = FINGERS_PER_HAND;
