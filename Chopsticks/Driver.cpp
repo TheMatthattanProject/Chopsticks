@@ -1,6 +1,6 @@
 // Chopsticks.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include "Console-interaction.h"
+#include "Game.h"
 #include <iostream>
 
 
@@ -9,8 +9,8 @@
 
 int main()
 {
-    auto test = new consoleObject();
-    test->printBothSides();
+    auto test = new Game();
+    test->takeTurns();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
