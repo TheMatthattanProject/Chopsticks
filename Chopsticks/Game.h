@@ -5,12 +5,21 @@
 
 #define INITIALIZE_CONSOLE_INTERACTION_DYNAMIC_LENGTH int length = sizeof(this->bank) / sizeof(this->bank[0]);
 
+struct Node 
+{
+	Individual* cell;
+	int level;
+
+};
+
+
 class Game
 {
 public:
 	void takeTurns();
 	void haveTurn(int turnTaker, int opponent, int turnHand, int opponentHand);
 	void printBothSides();
+	void BFSNodes(int levels);
 	Game();
 private:
 	Individual* bank[AMOUNT_OF_PLAYERS];

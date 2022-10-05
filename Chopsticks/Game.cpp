@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <iostream>
 #include <string>
+#include <queue>
 
 
 
@@ -89,4 +90,21 @@ void Game::printBothSides()
 
 			cout << line;
 		}
+}
+
+void Game::BFSNodes(int levels)
+{
+	int current_level = 0;
+	queue<Node*> bank;
+
+	//First node
+	Node* first = new Node();
+	first->cell = new Individual();
+	first->level = 0;
+	bank.push(first);
+
+	while (current_level < levels)
+	{
+		//Generate possible moves needs to be Individual function
+	}
 }
