@@ -5,6 +5,9 @@
 #define AMOUNT_OF_PLAYERS 2
 #define INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH int length = getNumberOfHands();
 
+#include <vector>
+
+
 class Individual
 {
 public:
@@ -14,6 +17,7 @@ public:
 	int getNumberOfHands();
 	int getFingersOnHand(int handNumber);
 	bool isDead();
+	bool operator ==(Individual& obj);
 
 private:
 	int fingersPerHand = FINGERS_PER_HAND;

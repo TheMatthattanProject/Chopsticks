@@ -130,10 +130,12 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="Individual.cpp" />
+    <ClCompile Include="Node.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="Individual.h" />
+    <ClInclude Include="Node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

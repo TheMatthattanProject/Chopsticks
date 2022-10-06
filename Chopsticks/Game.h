@@ -5,14 +5,6 @@
 
 #define INITIALIZE_CONSOLE_INTERACTION_DYNAMIC_LENGTH int length = sizeof(this->bank) / sizeof(this->bank[0]);
 
-struct Node 
-{
-	Individual* cell;
-	int level;
-
-};
-
-
 class Game
 {
 public:

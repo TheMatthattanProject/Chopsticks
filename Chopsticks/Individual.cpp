@@ -34,6 +34,34 @@ bool Individual::isDead()
 	return true;
 }
 
+bool Individual::operator==(Individual& obj)
+{
+	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
+	int opponentLength = obj.getNumberOfHands();
+	int matching = 0;
+
+		for (int i = 0; i < length; i++)
+		{
+			for (int o = 0; o < opponentLength; o++)
+			{
+				if (this->hands[i] == obj.getFingersOnHand(o))
+				{
+					matching++;
+					break;
+				}
+			}
+		}
+
+		if (matching > this->getNumberOfHands() - 1)
+		{
+			return true;
+		}
+
+		return false;
+	
+}
+
+
 Individual::Individual() 
 {
 	INITIALIZE_INDIVIDUAL_DYNAMIC_LENGTH
