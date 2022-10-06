@@ -4,13 +4,27 @@
 #include <iostream>
 
 
-
+using namespace std;
 
 
 int main()
 {
-    auto test = new Game();
-    test->takeTurns();
+    Individual* first = new Individual();
+    Individual* second = new Individual();
+
+
+    bool test = *first == *second;
+
+    second->receiveChopsticks(1, 1);
+
+    cout << test;
+
+    test = *first == *second;
+    cout << test;
+
+    test = *first == *second;
+    /*auto test = new Game();
+    test->takeTurns();*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

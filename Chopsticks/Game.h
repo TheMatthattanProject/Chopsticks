@@ -11,6 +11,7 @@ public:
 	void takeTurns();
 	void haveTurn(int turnTaker, int opponent, int turnHand, int opponentHand);
 	void printBothSides();
+	void BFSNodes(int levels);
 	Game();
 private:
 	Individual* bank[AMOUNT_OF_PLAYERS];
